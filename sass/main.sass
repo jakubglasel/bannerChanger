@@ -1,0 +1,186 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+body
+    font-family: 'Share Tech', sans-serif
+    background-color: white
+    color: white
+    display: flex
+    justify-content: center
+    align-items: center
+
+.wrapper
+    max-width: 1600px
+        
+
+    nav.menu
+        position: fixed
+        top: 0
+        left: 50%
+        transform: translate(-50%, 0)
+        height: 90px
+        width: 50%
+        max-width: 50%
+        background-color: #ddd
+        z-index: 2
+        box-shadow: 0 0 10px 2px black
+        ul
+            display: flex
+            background-color: white
+            height: 90px
+            list-style: none
+            flex-basis: 20%
+            align-items: center
+            justify-content: space-between
+            list-style: none
+            text-align: center
+            padding-left: 20px
+            padding-right: 20px
+            a
+                position: relative
+                color: black
+                font-size: 25px
+                text-transform: uppercase
+                text-decoration: none
+                line-height: 90px
+                cursor: pointer
+                display: block
+                transition: 0.3s
+                overflow: hidden
+            a::after
+                content: ''
+                border-bottom: black solid 6px
+                position: absolute
+                width: 90%
+                top: 50%
+                left: 50%
+                transform: translate(-180%, 280%)
+                transition: 0.3s
+
+            a:hover
+                &::after
+                    transform: translate(-50%,280%)
+
+    nav.slider
+        margin: auto
+        overflow: hidden
+        position: relative
+        top: 100px
+        left: 0
+        height: 70vh
+        width: 100vw
+        background-color: black
+
+        img
+            position: absolute
+
+        img.imgBW
+            left: 0
+            top: 0
+            height: 180%
+            opacity: 0.2
+            transform: translate(-45%,-20%)
+            animation: animeBW 6s linear infinite
+
+        img.imgColor
+            right: 30px
+            bottom: 80px
+            height: 50%
+            transform: translate(0%,0%)
+            animation: animeColor 6s linear infinite
+        h1
+            position: absolute
+            top: 5vh
+            left: 25vh
+            font-size: 45px
+            animation: animeItem 6s cubic-bezier(.19,.79,.79,.09) infinite
+        h2
+            width: 40%
+            position: absolute
+            top: 13vh
+            left: 30vh
+            transform: translate(-100vh,0)
+            font-size: 30px
+            animation: animeItemInfo 6s cubic-bezier(.19,.79,.79,.09) infinite
+    main
+        height: 100vh
+        width: 100%
+        position: absolute
+        background-color: #ddd
+        color: black
+        text-align: center
+
+        h1
+            margin-top: 20px
+        p
+            margin: 20px 30px
+
+@keyframes animeBW
+    0%
+        opacity: 0
+        transform: translate(-45%,-20%)
+    15%
+        opacity: 0.2
+    90%
+        opacity: 0.2
+    95%
+        opacity: 0
+    100%
+        opacity: 0
+        transform: translate(-40%,-18%)
+        height: 200%
+
+@keyframes animeColor
+    0%
+        opacity: 0
+        transform: translate(0%,0%)
+    15%
+        opacity: 1
+        transform: translate(-10%,-10%)
+        height: 55%
+    80%
+        opacity: 1
+        transform: translate(-10%,-10%)
+        height: 55%
+    95%
+        opacity: 0
+    100%
+        opacity: 0
+        transform: translate(0%,0%)
+
+@keyframes animeItem
+    0%
+        opacity: 0
+        transform: translate(+100vh,0)
+    15%
+        opacity: 1
+        transform: translate(0vh,0)
+
+    80%
+        opacity: 1
+        transform: translate(0vh,0)
+    95%
+        opacity: 0
+    100%
+        opacity: 0
+        transform: translate(+100vh,0)
+
+@keyframes animeItemInfo
+    0%
+        opacity: 0
+        transform: translate(-100vh,0)
+    15%
+        opacity: 1
+    25%
+        transform: translate(+10vh,0)
+
+    80%
+        opacity: 1
+        transform: translate(+10vh,0)
+    95%
+        opacity: 0
+    100%
+        opacity: 0
+        transform: translate(-100vh,0)
